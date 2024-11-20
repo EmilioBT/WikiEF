@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Actualizar página{% endblock %}
+{% block subtitle %} Ejercicios {% endblock subtitle %}
+{% block content %}
+{% include 'ejercicios/includes/ejercicio_menu.html'%}
+<main role="main">
+    <div class="container">
+            <div class="row mt-3 mb-3">
+            <div class="col-md-9 mx-auto">
+                <div>
+                    {% if 'ok' in request.GET %}
+                    <p style="color:green;">Página editada correctamente</p>
+                    <a href="{% url 'ejercicios:ejercicio' ejercicio.id ejercicio.title|slugify %}">Haz click aquí para ver el resultado</a>
+                    <hr>
+                    {% endif %}
+                    <div class="card-body">
+                        <form action="" method="post">{% csrf_token %}
+                                {{ form.as_p }}
+                            <div class="text-center"></div>
+                            <input type="submit" class='btn btn-primary btn-block' value="Actualizar página" />
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+            </div>
+    </div>
+</main>
+{% endblock %}

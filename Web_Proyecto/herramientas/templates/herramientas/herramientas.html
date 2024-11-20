@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Herramientas {% endblock %}
+{% block subtitle %} Herramientas {% endblock subtitle %}
+
+{% block content %}
+
+    <h1 class="wikiefAcademic">Bienvenido a WikiEF Academic</h1>
+
+    {% for herramienta in herramientas %}
+
+        <div class="contAcademic">
+
+            <div class="appAcademic">
+                    <a href="{{herramienta.link}}"> {{herramienta.title}} </a>
+                <p class="txtAcademic"> {{herramienta.description}}
+                </p>
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+{% endblock %}

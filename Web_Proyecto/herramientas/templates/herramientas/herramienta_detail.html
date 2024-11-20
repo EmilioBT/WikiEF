@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{{herramienta.title}}{% endblock %}
+{% block subtitle %} Herramientas {% endblock subtitle %}
+{% block content %}
+{% include 'herramientas/includes/herramienta_menu.html'%}
+
+<div class="contAcademic">
+
+  <div class="appAcademic">
+      <a href="{{herramienta.link}}"> {{herramienta.title}} </a>
+      <p class="txtAcademic"> {{herramienta.description}}</p>
+      {% if request.user.is_staff %}
+        <p>
+          <a href="{% url 'herramientas:update' herramienta.id %}"  class="btn btn-primary" id="enlacesAdmin">Editar</a> 
+          <a href="{% url 'herramientas:delete' herramienta.id %}"  class="btn btn-primary">Borrar</a>
+        </p>
+      {% endif %}
+  </div>
+
+</div>
+{% endblock %}

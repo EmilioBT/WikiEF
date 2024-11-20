@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Páginas{% endblock %}
+{% block subtitle %} Ejercicios {% endblock subtitle %}
+
+{% block content %}
+
+{% include 'ejercicios/includes/ejercicio_menu.html'%}
+{% include 'ejercicios/ejercicio_list.html'%}
+{% if ejercicio.categoria = 'coop' %}
+
+{% endif %}
+
+{% endblock %}
+

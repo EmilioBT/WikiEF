@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{{habito.title}}{% endblock %}
+{% block subtitle %} Hábitos {% endblock subtitle %}
+{% block content %}
+{% include 'habitos/includes/habito_menu.html'%}
+<div class="content">
+  <div class="projectCard">
+    <h2 class="card-header" style="background-color:rgb(13,110,253);">{{habito.title}}</h2>
+    <div class="card-body">
+          <p>
+            {{habito.description|safe}}
+          </p>
+
+          <p>
+            {% if habito.link %}
+              <a href="{{habito.link}}" class="btn btn-primary" >Link</a>
+            {% endif %}
+          </p>
+
+          {% if request.user.is_staff %}
+          <p>
+            <a href="{% url 'habitos:update' habito.id %}"  class="btn btn-primary" id="enlacesAdmin">Editar</a> 
+            <a href="{% url 'habitos:delete' habito.id %}"  class="btn btn-primary">Borrar</a>
+          </p>
+          
+          {% endif %}
+          
+    </div>
+  </div>
+</div>
+{% endblock %}

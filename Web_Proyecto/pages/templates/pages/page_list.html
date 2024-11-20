@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Páginas{% endblock %}
+{% block content %}
+{% include 'pages/includes/pages_menu.html'%}
+
+  {% for page in page_list|dictsort:'id' reversed %}
+
+    <div class="content">
+
+      <div class="projectCard">
+
+        <h5 class="card-header" style="background-color:rgb(13,110,253);">{{page.title}}</h5>
+        
+        <div class="card-body">
+
+          {% if habito.subtitle %}
+              <h5 class="card-title">{{page.title}}</h5>
+          {% endif %}
+
+          <p class="card-text">{{page.content}}</p>
+
+          {% if habito.link %}
+              <a href="{{page.link}}" class="btn btn-primary">Más info...</a>
+          {% endif %}
+
+          <p><a href="{% url 'pages:page' page.id page.title|slugify %}">Leer más</a>
+            {% if request.user.is_staff %}
+              <a href="{% url 'pages:update' page.id %}">Editar</a>
+              <a href="{% url 'pages:delete' page.id %}">Borrar</a>
+            {% endif %}
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  {% endfor %}
+
+{% endblock %}

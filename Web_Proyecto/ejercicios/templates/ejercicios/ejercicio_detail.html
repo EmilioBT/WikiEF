@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{{ejercicio.title}}{% endblock %}
+{% block subtitle %} Ejercicios {% endblock subtitle %}
+{% block content %}
+{% include 'ejercicios/includes/ejercicio_menu.html'%}
+
+<div class="contenido-ejercicios">
+
+  <div class="card">
+    <img src="{{ejercicio.image.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ejercicio.title}}</h5>
+      <p class="card-text"> {{ejercicio.description}} </p>
+      {% if request.user.is_staff %}
+      <p>
+        <a href="{% url 'ejercicios:update' ejercicio.id %}"  class="btn btn-primary" id="enlacesAdmin">Editar</a> 
+        <a href="{% url 'ejercicios:delete' ejercicio.id %}"  class="btn btn-primary">Borrar</a>
+      </p>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Elección de Ejercicios {% endblock %}
+
+{% block subtitle %} Colección de ejercicios {% endblock subtitle %}
+
+{% block content %}
+
+<div class="contenedorEjercicios">
+  <button class="eleccionEjercicios"> <a class="enlaceJuegos" href="{% url 'ejercicios:ejercicios'%}">Juegos Colectivos</a></button>
+  <button class="eleccionEjercicios"> <a class="enlaceJuegos" href="{% url 'ejercicios:ejercicios'%}">Juegos Cooperativos</a></button>
+  <button class="eleccionEjercicios"> <a class="enlaceJuegos" href="{% url 'ejercicios:ejercicios'%}">Juegos Individuales</a></button>
+  <button class="eleccionEjercicios"> <a class="enlaceJuegos" href="{% url 'ejercicios:ejercicios'%}">Juegos Tradicionales</a></button>
+  <button class="eleccionEjercicios"> <a class="enlaceJuegos" href="{% url 'ejercicios:ejercicios'%}">Actividades Naturales</a></button>
+  <button class="eleccionEjercicios"> <a class="enlaceJuegos" href="{% url 'ejercicios:ejercicios'%}">Actividades sensoriales</a></button>
+  <button class="eleccionEjercicios"> <a class="enlaceJuegos" href="{% url 'ejercicios:ejercicios'%}">Deportes alternativos</a></button>
+<div>
+
+{% endblock %}

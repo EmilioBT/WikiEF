@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Hábitos {% endblock %}
+{% block subtitle %} Hábitos {% endblock subtitle %}
+
+{% block content %}
+
+    {% for habito in habitos %}
+
+        <div class="projectCard">
+            <h5 class="card-header" style="background-color:rgb(13,110,253);">{{habito.title}}</h5>
+            <div class="card-body">
+
+                {% if habito.subtitle %}
+                    <h5 class="card-title">{{habito.subtitle}}</h5>
+                {% endif %}
+
+                <p class="card-text">{{habito.description}}</p>
+
+                {% if habito.link %}
+                    <a href="{{habito.link}}" class="btn btn-primary">Más info...</a>
+                {% endif %}
+
+            </div>
+        </div>
+        <div>
+
+    {% endfor %} 
+
+{% endblock %}

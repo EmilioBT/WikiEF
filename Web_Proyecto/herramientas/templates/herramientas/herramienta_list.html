@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Páginas{% endblock %}
+{% block subtitle %} Herramientas {% endblock subtitle %}
+{% block content %}
+{% include 'herramientas/includes/herramienta_menu.html'%}
+
+  {% for herramienta in herramienta_list|dictsort:'id' reversed %}
+
+  <div class="contAcademic">
+
+    <div class="appAcademic">
+      <a href="{{herramienta.link}}"> {{herramienta.title}} </a>
+      <p class="txtAcademic"> {{herramienta.description}}</p>
+    
+      {% if request.user.is_staff %}
+
+        <a href="{% url 'herramientas:herramientas' herramienta.id herramienta.title|slugify %}" class="btn btn-primary">Más info...</a>
+
+      {% endif %}
+      </div>
+  </div>
+
+  {% endfor %}
+
+{% endblock %}

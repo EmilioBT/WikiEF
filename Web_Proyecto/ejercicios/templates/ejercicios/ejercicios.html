@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Ejercicios {% endblock %}
+
+{% block content %}
+
+{% for ejercicio in ejercicios %}
+
+        <div class="card">
+        <img src="{{ejercicio.image.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{ejercicio.title}}</h5>
+            <p class="card-text"> {{ejercicio.description}} </p>
+            <a href="{{ejercicio.link}}" class="btn btn-primary">Más info..</a>
+            </div>
+        </div>
+
+{% endfor %}
+
+{% endblock %}
