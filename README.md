@@ -1,1 +1,2 @@
 # WikiEF
+Diseño y desarrollo de una aplicación web dirigida a maestros de educación física. Esta herramienta busca optimizar la planificación de clases, promover la formación continua de los docentes y proporcionar recursos innovadores que fomenten el aprendizaje activo y la motivación de los estudiantes. Mediante el uso de tecnologías como Django para el backend y un diseño responsive implementado con Bootstrap, la aplicación permite a los docentes acceder a recursos didácticos, compartir experiencias y mejorar la enseñanza de manera inclusiva y colaborativa.
