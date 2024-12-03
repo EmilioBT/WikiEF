@@ -4,7 +4,7 @@ from django.db import models
 
 class Proyecto (models.Model):
     title = models.CharField(max_length=200, verbose_name = "Título", null=True, blank=True)
-    image = models.ImageField(verbose_name = "Imagen", upload_to="ejercicio", null=True, blank=True)
+    image = models.ImageField(verbose_name = "Imagen", upload_to="proyecto", null=True, blank=True)
     link = models.URLField(verbose_name="Dirección Web", null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True, verbose_name = "Fecha creación")
     updated = models.DateTimeField(auto_now=True, verbose_name = "Fecha actualización")
