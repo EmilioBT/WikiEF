@@ -8,14 +8,14 @@
     {% for habito in habitos %}
 
         <div class="projectCard">
-            <h5 class="card-header" style="background-color:rgb(13,110,253);">{{habito.title}}</h5>
+            <h5 class="card-header" style="background-color:rgb(13,110,253);">{{habito.title|safe}}</h5>
             <div class="card-body">
 
                 {% if habito.subtitle %}
-                    <h5 class="card-title">{{habito.subtitle}}</h5>
+                    <h5 class="card-title">{{habito.subtitle|safe}}</h5>
                 {% endif %}
 
-                <p class="card-text">{{habito.description}}</p>
+                <p class="card-text">{{habito.description|safe}}</p>
 
                 {% if habito.link %}
                     <a href="{{habito.link}}" class="btn btn-primary">Más info...</a>

@@ -11,22 +11,21 @@
 
       <div class="projectCard">
 
-        <h5 class="card-header" style="background-color:rgb(13,110,253);">{{habito.title}}</h5>
+        <h5 class="card-header" style="background-color:rgb(13,110,253);">{{habito.title|safe}}</h5>
         
         <div class="card-body">
 
           {% if habito.subtitle %}
-              <h5 class="card-title">{{habito.title}}</h5>
+              <h5 class="card-title">{{habito.title|safe}}</h5>
           {% endif %}
 
-          <p class="card-text">{{habito.description}}</p>
+          <p class="card-text">{{habito.description|safe}}</p>
 
           <a href="{% url 'habitos:habito' habito.id habito.title|slugify %}" class="btn btn-primary">Más info...</a>
 
             {% if request.user.is_staff %}
 
             {% endif %}
-          </p>
 
         </div>
 
