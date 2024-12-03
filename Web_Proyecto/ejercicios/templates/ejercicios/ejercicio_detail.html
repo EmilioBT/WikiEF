@@ -10,8 +10,8 @@
   <div class="card">
     <img src="{{ejercicio.image.url}}" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">{{ejercicio.title}}</h5>
-      <p class="card-text"> {{ejercicio.description}} </p>
+      <h5 class="card-title">{{ejercicio.title|safe}}</h5>
+      <p class="card-text"> {{ejercicio.description|safe}} </p>
       {% if request.user.is_staff %}
       <p>
         <a href="{% url 'ejercicios:update' ejercicio.id %}"  class="btn btn-primary" id="enlacesAdmin">Editar</a> 
