@@ -11,7 +11,7 @@
                 <div>
                     {% if 'ok' in request.GET %}
                     <p style="color:green;">Página editada correctamente</p>
-                    <a href="{% url 'herramientas:herramienta' herramienta.id herramienta.title|slugify %}">Haz click aquí para ver el resultado</a>
+                    <a href="{% url 'herramientas:herramientas' herramienta.id herramienta.title|slugify %}">Haz click aquí para ver el resultado</a>
                     <hr>
                     {% endif %}
                     <div class="card-body">
