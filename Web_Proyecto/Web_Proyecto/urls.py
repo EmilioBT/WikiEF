@@ -33,7 +33,7 @@ urlpatterns = [
     path('pages', include(pages_patterns)), 
     path('habitos', include(habitos_patterns)),
     path('ejercicios', include(ejercicios_patterns)),
-    path('herarmietas', include(herramientas_patterns)),
+    path('herramientas', include(herramientas_patterns)),
     path('tipoEjercicios', ejercicios_views.tipoEjercicios, name="tipoEjercicios"),
     path('proyectos', proyectos_views.proyectos, name="proyectos"),
     path('login', core_views.login, name="login"),

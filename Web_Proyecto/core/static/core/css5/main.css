@@ -106,7 +106,7 @@ h1, h2{
     border: 2px solid black;
     border-radius: 10%;
     width: 25%;
-    height: 25em;
+    height: 75%;
     margin: auto auto auto auto;
     background-color:  rgba(0, 0, 0, 0.212);
 }
@@ -119,14 +119,14 @@ h1, h2{
 
 .eleccionEjercicios {
     display: block;
-    width: 15em;
+    width: 80%;
     margin: 10px auto 10px auto;
     padding: 10px 20px;
     text-align: center;
     border: none;
     position: relative;
     background-color:rgb(2,80,196);
-    border-radius: 8%;
+    border-radius:10%;
     align-items: center;
 }
 
